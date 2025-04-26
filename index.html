@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="dark">
+  <div class="calculator">
+    <div class="top-bar">
+      <h2>Scientific Calculator</h2>
+      <button class="toggle-theme" onclick="toggleTheme()">🌙</button>
+    </div>
+
+    <input type="text" id="display" readonly>
+
+    <div class="buttons">
+      <button class="toggle-fn" data-normal="Math.sin" data-shift="Math.asin"><span
+          class="alt-func">sin⁻¹</span><br>sin</button>
+      <button class="toggle-fn" data-normal="Math.cos" data-shift="Math.acos"><span
+          class="alt-func">cos⁻¹</span><br>cos</button>
+      <button class="toggle-fn" data-normal="Math.tan" data-shift="Math.atan"><span
+          class="alt-func">tan⁻¹</span><br>tan</button>
+      <button class="toggle-fn" data-normal="Math.log10" data-shift="ln"><span
+          class="alt-func">ln</span><br>log</button>
+      <button onclick="playSound(); appendFunction('Math.sqrt')">√</button>
+
+      <button onclick="playSound(); appendValue('Math.PI')">π</button>
+      <button class="toggle-fn" data-normal="Math.exp">e</button>
+      <button onclick="playSound(); appendPower()">xʸ</button>
+      <button class="toggle-fn" data-normal="**2" data-shift="**3"><span class="alt-func">x³</span><br>x²</button>
+      <button onclick="playSound(); appendValue('%')">%</button>
+
+      <button onclick="playSound(); appendValue('(')">(</button>
+      <button onclick="playSound(); appendValue(')')">)</button>
+      <button onclick="playSound(); appendValue('/')">÷</button>
+      <button onclick="playSound(); appendValue('*')">×</button>
+      <button onclick="playSound(); appendValue('-')">−</button>
+
+
+
+      <button onclick="playSound(); appendValue('7')">7</button>
+      <button onclick="playSound(); appendValue('8')">8</button>
+      <button onclick="playSound(); appendValue('9')">9</button>
+      <button onclick="playSound(); appendValue('+')">+</button>
+      <button onclick="playSound(); deleteLast()">⌫</button>
+
+
+
+      <button onclick="playSound(); appendValue('4')">4</button>
+      <button onclick="playSound(); appendValue('5')">5</button>
+      <button onclick="playSound(); appendValue('6')">6</button>
+      <button onclick="playSound(); appendValue('.')">.</button>
+      <button onclick="playSound(); clearDisplay()">C</button>
+
+      <button onclick="playSound(); appendValue('1')">1</button>
+      <button onclick="playSound(); appendValue('2')">2</button>
+      <button onclick="playSound(); appendValue('3')">3</button>
+      <button onclick="playSound(); appendValue('0')">0</button>
+      <button onclick="playSound(); calculate()">=</button>
+
+
+    </div>
+
+    <div class="history-box" id="history"></div>
+  </div>
+
+  <audio id="click-sound" src="ClickSund.mp3"></audio>
+  <script src="script.js"></script>
+</body>
+
+</html>
